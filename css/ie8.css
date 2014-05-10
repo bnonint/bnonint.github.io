@@ -1,0 +1,198 @@
+/* ---------------------------------------------------------------
+--------------------------- GENERAL ------------------------------
+--------------------------------------------------------------- */
+body{
+	overflow-x:hidden !important;
+	width:100%;
+	margin:0;
+	padding:0;
+	}
+.page-title{
+	padding-bottom:54px;
+	}
+h1, h2, h3, h4, h5, h6{
+	font-family: Arial, Sans-Serif;
+	font-weight:300;
+	}
+/* ---------------------------------------------------------------
+------------------------------- ANGLES ---------------------------
+--------------------------------------------------------------- */
+.menu_bottom{
+	display:none;
+	}
+/* ---------------------------------------------------------------
+--------------------------- COLORS -------------------------------
+--------------------------------------------------------------- */
+.white .team-img:hover .overlay-img{
+   	background-color: rgb(255,255,255);
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+	}
+.green .team-img:hover .overlay-img{
+   	background-color: rgb(22,160,133);
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+	}
+.blue .team-img:hover .overlay-img{
+   	background-color: rgb(31,46,60);
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+	}
+/* ---------------------------------------------------------------
+------------------------ HOME SLIDER -----------------------------
+--------------------------------------------------------------- */
+.home-slider{
+	position:relative;
+	}
+/* ---------------------------------------------------------------
+--------------------------- NAVIGATION ----------------------------
+--------------------------------------------------------------- */
+.my-sticky-element{
+	background-color:#28242A;
+	}
+.my-sticky-element a{
+	color:#ffffff;
+	}
+
+.navbar-nav li a i,
+.navbar-nav li a span{
+	display:block;
+	line-height:18px;
+	margin-top:9px;
+	margin-bottom:9px;
+	}
+.navbar-brand{
+	line-height:80px;
+	}
+.navbar-nav li.active a,
+.navbar-nav li a:focus{
+	background-color:#28242A;
+	color:#ffffff !important;
+	}
+.navbar-nav li a i{
+	color:#16A085 !important;
+	}
+.navbar-nav li.active a i,
+.navbar-nav li a:focus i{
+	color:#ffffff !important;
+	}
+.navbar-nav{
+	position: relative;
+	}
+.navbar-toggle{
+	text-align:center;
+	width:100%;
+	}
+.my-sticky-element{
+	position:absolute;
+	height:auto;
+	width:100%;
+	}
+#page-wrapper{
+	padding-top:81px;
+	}
+.smallie8{
+	position:relative;
+	width:450px;
+	margin:auto auto;
+	display:table;
+	height:80px !important;
+	}
+.largeie8{
+	height:auto !important;
+	}
+/* ---------------------------------------------------------------
+----------------------------- STAFF ------------------------------
+--------------------------------------------------------------- */
+.highlights h6{
+	margin-top:12px;
+	margin-bottom:18px;
+	}
+/* ---------------------------------------------------------------
+----------------------------- STAFF ------------------------------
+--------------------------------------------------------------- */
+.team-img{
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+}
+.team-img .overlay-img{
+	display:none;
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+}
+.team-img:hover .overlay-img{
+	display:table;
+	}
+.team-members .block-inner{
+	height:216px;
+	width:216px;	
+	}
+.testimonials-img img{
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+	position:relative;
+	width:100%;
+	height:100%;
+	visibility:visible;
+	}
+.team-img{
+	border-radius:500px 500px 500px 500px;
+	overflow:hidden;
+	height:198px;
+	width:198px;	
+	margin: 0 auto;
+	behavior: url(/PIE.htc);
+	position:relative;
+	}
+.team-img img{
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+	position:relative;
+	}
+.team-members .block-inner{
+	padding:7px;
+	border-radius:500px 500px 500px 500px;
+	margin-left:auto !important;
+	margin-right:auto;
+	behavior: url(/PIE.htc);
+	border:1px solid #16A085;
+	position:relative;
+	}
+/* ---------------------------------------------------------------
+-------------------------- SERVICES ------------------------------
+--------------------------------------------------------------- */
+.service .smxs-margin {
+	margin-bottom:20px;
+	}
+.nav-tabs li i{
+	display:none;
+	}
+.nav-tabs li.active i{
+	display:inline;
+	}
+/* ---------------------------------------------------------------
+-------------------------- PRODUCTS ------------------------------
+--------------------------------------------------------------- */
+.tile-bg-title{
+	font-weight:400;
+	}
+.isotope-item:hover .isotope-img .isotope-overlay{
+	background-color:rgb(40, 36, 42);  
+	}
+.isotope-item .isotope-img .isotope-overlay i{
+	display:none;
+	}
+.isotope-item:hover .isotope-img .isotope-overlay i{
+	display:block;
+	}
+/* ---------------------------------------------------------------
+-------------------------- CONTACT -------------------------------
+--------------------------------------------------------------- */
+.contact-icons a {
+	border-radius:500px 500px 500px 500px;
+	behavior: url(/PIE.htc);
+	position:relative;
+}
+.input-text, textarea{
+	background-color:#1F2E3C;
+}
