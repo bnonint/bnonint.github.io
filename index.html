@@ -761,7 +761,7 @@
      		 					<form method="post" class="contact-form">
 									<fieldset>
 									<input type="text" name="name" placeholder="Name" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="namecon">
-									<input type="text" name="email" placeholder="E-mail" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="emailcon">
+									<input type="text" name="email" placeholder="E-mail or Phone Number" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="emailcon">
 									<textarea rows="6" name="comments" placeholder="Message" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="commentcon"></textarea>
 									<div class="btn-wrapper"><input type="button" value="Submit" onClick="ajax.send()" class="uppercase btn btn-primary btn-large btn-input"  id="sendcon"></div>
 							</fieldset>	
@@ -855,6 +855,9 @@
 			   	   	$("input[id=sendcon]").val(text);
 		   	   	}
 	   	   }	
-   	</script>		
+   	</script>	
+   	<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '603ff03c-05ac-403f-8511-ebc1430ad805', f: true }); done = true; } }; })();</script>
+
+	
 </body>
 </html>
