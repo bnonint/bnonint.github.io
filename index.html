@@ -775,10 +775,15 @@
 						<p>We will like to hear from you.  Complete the form below with any message or question you may have and we will respond promptly</p>
 						<form method="post" class="contact-form">
 							<fieldset>
-								<input type="text" name="name" placeholder="Name" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="namecon">
-								<input type="text" name="email" placeholder="E-mail" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="emailcon">
-								<textarea rows="6" name="comments" placeholder="Message" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="commentcon"></textarea>
-								<div class="btn-wrapper"><input type="button" value="Submit" onClick="ajax.send()" class="uppercase btn btn-primary btn-large btn-input"  id="sendcon"></div>
+									<input type="text" name="firstname" placeholder="First Name*" class="col-xs-12 col-sm-12 col-lg-4 input-text" id="fnamecon">
+									<input type="text" name="lastname" placeholder="Last Name*" class="col-xs-12 col-sm-12 col-lg-4 col-lg-offset-1 input-text" id="lnamecon">
+									<textarea rows="6" name="comments" placeholder="Message* (include products required)" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="commentcon"></textarea>
+									<textarea name="address" placeholder="Address*" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="addresscon"></textarea>
+									<input type="text" name="phone" placeholder="Phone*" class="col-xs-12 col-sm-12 col-lg-3 input-text" id="phonecon">
+									<input type="text" name="email" placeholder="Email*" class="col-xs-12 col-sm-12 col-lg-4 col-lg-offset-1 input-text" id="emailcon">
+									<input type="text" name="qty" placeholder="Quantity Desired" class="col-xs-12 col-sm-12 col-lg-3 col-lg-offset-1 input-text" id="qtycon">
+									<br></br>
+									<div class="btn-wrapper"><input type="button" value="Submit" onClick="ajax.send()" class="uppercase btn btn-primary btn-large btn-input"  id="sendcon"></div>
 							</fieldset>	
 						</form>		
 					</div>
