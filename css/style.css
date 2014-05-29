@@ -1460,9 +1460,12 @@ cite{
 	text-transform:uppercase;
 	font-weight:400;
 	}
-.isotope-item {
+.isotope-item { /*endyk*/
 	padding:0;
-	width:24.975%;
+	/*width:24.975%;*/
+	width:24.475%;
+	margin-left:0.25em;
+	margin-right:0.25em; 
 	}
 @media (max-width:1199px){
 	.isotope-item {
