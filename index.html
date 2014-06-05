@@ -967,12 +967,12 @@
 							
 							<br>
 							<abbr title="Phone">Phone:</abbr>
-							<span>08033490003</span>
+							<span>+ (234) 8033490003</span>
 							<br>
 							<!--abbr title="Fax">F:</abbr>
 							<span>(123)456&#8209;7890</span-->
 							<!--br-->
-							Email: <a href="mailto:contact@benoninterior.com">contact@benoninterior.com</a>
+							Email: <a href="mailto:benonu@yahoo.com">benonu@yahoo.com</a>
 						</p>
 						<h6 class="uppercase colored-text">Port Harcourt Office</h6>
 						<p class="address">
@@ -1025,19 +1025,20 @@
       							<p>Join our growing network of doormat and rug distributors.  Complete the form below and we will contact you promptly.</p>
     						</div>
 						<div-->
+						<div id="submit-message"></div>
 						<p>We will like to hear from you.  Complete the form below with any message or question you may have and we will respond promptly</p>
-						<form class="contact-form">
+						<form class="contact-form" id="contactform">
 							<fieldset>
-									<input type="text" name="firstname" placeholder="First Name*" class="col-xs-12 col-sm-12 col-lg-4 input-text" id="fnamecon" required>
-									<input type="text" name="lastname" placeholder="Last Name*" class="col-xs-12 col-sm-12 col-lg-4 col-lg-offset-1 input-text" id="lnamecon" required>
-									<textarea rows="6" name="comments" placeholder="Message* (include products required)" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="commentcon" required></textarea>
-									<input type="text" name="company" placeholder="Company Name*" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="companycon" required>
-									<textarea name="address" placeholder="Address*" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="addresscon" required></textarea>
-									<input type="text" name="phone" placeholder="Phone*" class="col-xs-12 col-sm-12 col-lg-3 input-text" id="phonecon" required>
-									<input type="text" name="email" placeholder="Email*" class="col-xs-12 col-sm-12 col-lg-4 col-lg-offset-1 input-text" id="emailcon" required>
+									<input type="text" name="firstname" placeholder="First Name*" class="col-xs-12 col-sm-12 col-lg-4 input-text" id="fnamecon">
+									<input type="text" name="lastname" placeholder="Last Name*" class="col-xs-12 col-sm-12 col-lg-4 col-lg-offset-1 input-text" id="lnamecon" >
+									<textarea rows="6" name="comments" placeholder="Message* (include products required)" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="commentcon" ></textarea>
+									<input type="text" name="company" placeholder="Company Name*" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="companycon" >
+									<textarea name="address" placeholder="Address*" class="col-xs-12 col-sm-12 col-lg-12 input-text" id="addresscon" ></textarea>
+									<input type="text" name="phone" placeholder="Phone*" class="col-xs-12 col-sm-12 col-lg-3 input-text" id="phonecon" >
+									<input type="text" name="email" placeholder="Email*" class="col-xs-12 col-sm-12 col-lg-4 col-lg-offset-1 input-text" id="emailcon" >
 									<input type="text" name="qty" placeholder="Quantity Desired" class="col-xs-12 col-sm-12 col-lg-3 col-lg-offset-1 input-text" id="qtycon">
 									<br></br>
-									<div class="btn-wrapper"><input type="submit" value="Submit" class="uppercase btn btn-primary btn-large btn-input"  id="sendcon"></div>
+									<div class="btn-wrapper"><input type="button" onclick="ajax.send()" value="Submit" class="uppercase btn btn-primary btn-large btn-input"  id="sendcon"></div>
 							</fieldset>	
 						</form>		
 					</div>
@@ -1076,8 +1077,8 @@
 	<script src="js/jquery.isotope.min.js"></script>		
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/readmore.min.js"></script>
+	<!--script src="js/emailer.js"></script-->
 	<script src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
-    <script src="js/emailer.js"></script>
 	<!-- Preloader -->
 	<script type="text/javascript">
 		//<![CDATA[
@@ -1090,26 +1091,45 @@
 	<!-- Contact Form -->
    	<script>   
 	   	var ajax = {		
-		   	send: function() {				
-				var userName = $("input[id=namecon]").val();
+		   	send: function() {	
+		   		var parseAPPID = "FpWkB0EA12iHbfMRr6Nsg6u6UP4hG1VriO5ZPbI5";
+				var parseJSID = "DInTDT03h8QcTmH7YJI9NwNccyJhZVfSo5kcTtVQ";
+				Parse.initialize(parseAPPID, parseJSID);
+				var CommentObject = Parse.Object.extend("CommentObject");
+
+				var data = {};
+				data.name = $("#fnamecon").val() + ' ' + $("#lnamecon").val();
+				data.company = $("#companycon").val();
+				data.comments = $("#commentcon").val();
+				data.address = $("#addresscon").val();
+				data.phone = $("#phonecon").val();
+				data.qty = $("#qtycon").val();
+				data.email = $("#emailcon").val();
+
+				/*var userName = $("input[id=namecon]").val();
 				var userEmail = $("input[id=emailcon]").val();
-				var userComments = $("textarea[id=commentcon]").val();
-				
-				if(userName == "" || userEmail == "" || userComments == "")
+				var userComments = $("textarea[id=commentcon]").val();*/
+
+				if(data.name == "" || data.email == "" || data.comments == "")
 					alert("Form not complete");
+
 				else {					
 					ajax.SetText("Sending...");
-					$.post("sendmail.php", {
-						name: userName, email: userEmail, comments: userComments	
-					}, function(data) {
-						if(data == "true") {
-							ajax.SetText("Sent!");	
-						} else {
+					var comment = new CommentObject();
+					comment.save(data, {
+						success:function() {
+							ajax.SetText("Sent!");
+							$('#contactform').each(function(){
+                				this.reset();   //Here form fields will be cleared.
+           					 });
+							$('#submit-message').html("<div id='submit-message' class='alert alert-success'>Form submitted successfully! We will be in contact shortly. </div>")
+							    .fadeOut(6500);
 							ajax.SetText("Submit");
-							alert(data);	
+						},
+						error:function(e) {
+							ajax.SetText("Submit");
+							alert("Something went wrong. Check your entries and try again.");
 						}
-						
-						
 					});
 				}
 			
